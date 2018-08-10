@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.co.bucket.repository.mapper.PackageMapper">
+
+	<!-- 항공권 검색 -->
+	<resultMap type="airSearch" id="airMap">
+		<result column="air_code" property="airCode" />
+		<result column="air_name" property="airName" />
+		<result column="departure_city_code" property="departureCityCode" />
+		<result column="arrival_city_code" property="arrivalCityCode" />
+		<result column="seat_cnt" property="seatCnt" />
+		<result column="start_date" property="startDate" />
+		<result column="end_date" property="endDate" />
+		<result column="flying_time" property="flyingTime" />
+		<result column="adult_price" property="adultPrice" />
+		<result column="child_price" property="childPrice" />
+		<result column="baby_price" property="babyPrice" />
+	</resultMap>
+	
+	<!-- 호텔검색  -->
+	<resultMap id="hotelMap" type="hotelSearch">
+		<result column="hotel_code" property="hotelCode" />
+		<result column="hotel_name" property="hotelName" />
+		<result column="city_code" property="cityCode" />
+		<result column="city_name" property="cityName" />
+		<result column="hotel_img_path" property="hotelImgPath" />
+		<result column="room_code" property="roomCode" />
+		<result column="room_price" property="roomPrice" />
+		<result column="room_name" property="roomName" />
+	</resultMap>
+	
+	<!-- 일일 일정검색 -->
+	<resultMap id="scheduleMap" type="schedule">
+		<result column="start_date" property="startDate"/>
+		<result column="end_date" property="endDate"/>
+	</resultMap>
+	
+	<!-- 테마검색 -->
+	<resultMap id="themeMap" type="themeSearch">
+		<result column="THEME_CODE" property="themeCode"/>
+		<result column="DAILY_CODE" property="dailyCode"/>
+		<result column="CITY_CODE" property="cityCode"/>
+		<result column="THEME_NAME" property="themeName"/>
+		<result column="THEME_TYPE" property="themeType"/>
+		<result column="THEME_INFO" property="themeInfo"/>
+		<result column="THEME_PRICE" property="themePrice"/>
+		<result column="img_path" property="imgPath"/>
+	</resultMap>
+	
+	
+	<select id="selectStartAir" parameterType="airSearch" resultMap="airMap">
+		select *
+		  from tb_air
+		 where ARRIVAL_CITY_CODE = #{arrivalCityCode}
+		   and DEPARTURE_CITY_CODE = #{departureCityCode}
+		   and start_date like '%' || #{startDate} || '%'
+	</select>
+	
+	<select id="selectEndAir" parameterType="airSearch" resultMap="airMap">
+		select * 
+		  from tb_air
+		 where ARRIVAL_CITY_CODE = #{departureCityCode}
+		   and DEPARTURE_CITY_CODE = #{arrivalCityCode}
+		   and start_date like '%' || #{endDate} || '%'
+	</select>
+	
+	<select id="selectHotelBySearch" parameterType="hotelSearch" resultMap="hotelMap">
+	
+		select h.hotel_code, h.hotel_name, h.HOTEL_IMG_PATH, c.CITY_NAME
+		  from tb_hotel h
+		  join tb_city c
+			on h.CITY_CODE = c.CITY_CODE
+		<where>
+			<if test="cityCode != ''">
+				h.city_code = #{cityCode}
+			</if>
+			<if test="hotelName != ''">
+				AND h.hotel_name like '%' || #{hotelName} || '%'
+			</if>
+		</where>
+<!-- 		<trim prefix="where" prefixOverrides="AND|OR"> -->
+<!-- 			<if test="cityCode != ''"> -->
+<!-- 				AND city_code = #{cityCode} -->
+<!-- 			</if> -->
+<!-- 			<if test="hotelName != ''"> -->
+<!-- 				AND hotel_name like '%' || #{hotelName} || '%' -->
+<!-- 			</if> -->
+<!-- 		</trim> -->
+	</select>
+
+	<select id="selectSchedule" parameterType="hotelSearch" resultMap="scheduleMap">
+		select end_date as start_date,  (
+										select start_date
+										 from tb_air
+										 where air_code = #{endAirCode}
+										) as end_date
+		  from tb_air
+		 where air_code = #{startAirCode}
+	</select>
+	
+	
+	<select id="selectHotelByCode" parameterType="hotelSearch" resultMap="hotelMap">
+		select *
+		  from TB_ROOM_TYPE r
+		  join TB_HOTEL h
+		    on r.hotel_code = h.HOTEL_CODE
+		 where r.hotel_code = #{hotelCode}
+	</select>
+	
+	<select id="selectThemeByCity" parameterType="hotelSearch" resultMap="themeMap">
+		select DISTINCT theme_type
+		  from tb_theme
+		 where city_code = #{cityCode}
+	</select>
+	
+	<select id="selectThemeByType" parameterType="themeSearch" resultMap="themeMap">
+		select t.*, i.IMG_PATH
+		 from tb_theme t
+		 join TB_IMG_GROUP i
+		   on t.THEME_CODE = i.THEME_CODE
+		where CITY_CODE = #{cityCode}
+		<if test="themeType != ''">
+			and theme_type = #{themeType}
+		</if>
+	</select>
+	
+	<insert id="insertPackage" parameterType="package">
+		insert into tb_package(
+			PACKAGE_CODE,
+			PACKAGE_NAME,
+			USER_EMAIL,
+			DEPARTURE_AIR_CODE,
+			ARRIVAL_AIR_CODE,
+			ACCEPT_YN,
+			PACKAGE_PEOPLE_CNT,
+			PACKAGE_PRICE,
+			PACKAGE_IMG_PATH
+		)values(
+			#{packageCode},
+			#{packageName},
+			#{userEmail},
+			#{startAirCode},
+			#{endAirCode},
+			'y',
+			1,
+			#{packagePrice},
+			#{filePath}
+		)
+	</insert>
+	
+	
+	<insert id="insertDailyByHotel" parameterType="daily">
+			insert into tb_daily(
+				DAILY_CODE,
+				SCHEDULE_DAILY,
+				DAILY_TYPE,
+				PACKAGE_CODE
+			)values
+			(
+				s_daily_code.nextval,
+				#{scheduleDaily},
+				#{dailyType},
+				#{packageCode}
+			)
+	</insert>
+	
+	<select id="selectDailyMax" resultType="int">
+		select max(DAILY_CODE)
+		  from tb_daily
+	</select>
+	
+	<insert id="insertDailyByTheme" parameterType="daily">
+		insert into tb_daily(
+			DAILY_CODE,
+			SCHEDULE_DAILY,
+			DAILY_TYPE,
+			PACKAGE_CODE,
+			THEME_CODE
+		)values(
+			s_daily_code.nextval,
+			#{scheduleDaily},
+			#{dailyType},
+			#{packageCode},
+			#{themeCode}
+		)
+	</insert>
+	
+	<select id="selectDailyCode" parameterType="package" resultType="int">
+		select daily_code
+		  from tb_daily
+		 where PACKAGE_CODE = #{packageCode}
+		   and DAILY_TYPE = '숙박'
+	</select>
+	
+	<insert id="insertStay" parameterType="stay">
+		insert into tb_stay(
+			STAY_CODE,
+			HOTEL_CODE,
+			DAILY_CODE,
+			ROOM_CODE
+		)values(
+			s_stay_code.nextval,
+			#{hotelCode},
+			#{dailyCode},
+			#{roomCode}
+		)
+	</insert>
+	
+</mapper>
+
+
+
+
