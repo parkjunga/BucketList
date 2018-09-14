@@ -33,7 +33,7 @@
 * 패키지내에 해당하는 테마와 숙소정보등을 ajax를 통해 받아서 페이지내에 출력
 * 사용자가 로그인시 여행에 대한 리뷰작성 및 결제가 가능 
 
->![상세페이지](https://s3-eu-west-1.amazonaws.com/froala-eu/temp_files%2F1533878007108-%EB%94%94%ED%85%8C%EC%9D%BC.png)
+>![상세페이지](https://blogfiles.pstatic.net/MjAxODA4MTBfNjgg/MDAxNTMzODczNzU2NDU3.Tw4L1a1c2Q6kzEHFTX7DiFhYDMGNXdKu5WuLd_IV6Aog.Bp7wyVCB7_LoY2aUbSoq-W5yUs7GQbU-_nJ2-O0sekUg.GIF.djdjejh/5.gif)
 >![상세페이지](https://s3-eu-west-1.amazonaws.com/froala-eu/temp_files%2F1533878046114-%EC%9D%BC%EC%A0%95.png)
 
 ### 프로젝트 구조
