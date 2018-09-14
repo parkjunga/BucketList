@@ -36,7 +36,7 @@
 
 >![상세페이지](https://blogfiles.pstatic.net/MjAxODA4MTBfNjgg/MDAxNTMzODczNzU2NDU3.Tw4L1a1c2Q6kzEHFTX7DiFhYDMGNXdKu5WuLd_IV6Aog.Bp7wyVCB7_LoY2aUbSoq-W5yUs7GQbU-_nJ2-O0sekUg.GIF.djdjejh/5.gif)
 >![상세페이지](https://s3-eu-west-1.amazonaws.com/froala-eu/temp_files%2F1533878046114-%EC%9D%BC%EC%A0%95.png)
-
+>![상세페이지](https://postfiles.pstatic.net/MjAxODA5MTRfMjAg/MDAxNTM2OTAxMDUyMjUx.w-Spz46pp3gDXHhj1O01zx9wIjy9VEXeCmFNjmxsof4g.seYubrCrIKiy5HgZyeZq0UdTnYtUY7gKReCAMtYAzSAg.PNG.djdjejh/de.png?type=w773)
 ### 프로젝트 구조
 * #### controller / domain / mapper / xml <br>
 >![enter image description here](https://postfiles.pstatic.net/MjAxODA5MTRfNjEg/MDAxNTM2OTAwMTkwNzM4.kPlaJQi-W1KwxgjTPnJ2EodWMCBz-fy1o8zWFQt5eHcg.WccvXiNeiMGugyKVkZKLaDwSyGmSGhehgqy7S_yO2DQg.PNG.djdjejh/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%EA%B5%AC%EC%A1%B0.png?type=w773)
