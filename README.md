@@ -20,7 +20,8 @@
 * 금주의 추천상품에 경우 상세페이지에 있는 게시글 클릭시 나오는 리뷰작성내에서 별점순이 높은 순으로 패키지 출력<br>
 * 금주의 인기상품에 경우 패키지 결제가 가장 많이 진행된 패키지를 5개씩 출력 
 
->![메인페이지](https://s3-eu-west-1.amazonaws.com/froala-eu/temp_files%2F1533873953356-main_.png)
+>![메인페이지](https://postfiles.pstatic.net/MjAxODA4MTBfODIg/MDAxNTMzODczODQyMjgx.WQdyEZE6Tao6Cyebljx_gWiwWEhqTvZSE9qkUA1qNBsg.s3b7FB3OYil2KNp4g9Hg_U4x3aLwrkbB2FwLD7IJXKYg.JPEG.djdjejh/jpgmain_.jpg?type=w773)
+
 
 > 검색 및 상세검색 구현 
 * 메인 페이지내에서 패키지명에 해당하는 검색어를 입력시 상세검색페이지내에 리스트가 출력
