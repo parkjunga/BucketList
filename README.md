@@ -39,7 +39,7 @@
 
 ### 프로젝트 구조
 * #### controller / domain / mapper / xml <br>
->![enter image description here](https://s3-eu-west-1.amazonaws.com/froala-eu/temp_files%2F1533875807992-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8+%EB%94%94%EB%A0%89%ED%86%A0%EB%A6%AC.png)
+>![enter image description here](https://postfiles.pstatic.net/MjAxODA5MTRfMTMy/MDAxNTM2OTAwMDI4NjA3.boZ0yADkWx2SR0Rri8nOPWRJxaWNGinfFzgrpAP7cfMg.bsPx4AhTOx8lIhuJUPHRGHG10f8JuPhVTRTV-D4Lu34g.PNG.djdjejh/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%EA%B5%AC%EC%A1%B0.png?type=w773)
 
 ### 버전관리
 * #### SourceTree 이용, 팀원들간에 수정/삭제에 따른 상시 업데이트((https://github.com/LeeJeongHun1/bucket_list)
