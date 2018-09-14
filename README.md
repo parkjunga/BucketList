@@ -28,7 +28,7 @@
 * 출력결과내 상세하게 더 검색하고싶다면 검색조건을 선택해서 검색 가능 
 * ajax로 출력결과를 실시간으로 출력
 
->![상세검색](https://s3-eu-west-1.amazonaws.com/froala-eu/temp_files%2F1533876454010-search23.gif)
+>![상세검색](https://postfiles.pstatic.net/MjAxODA5MTRfMjQg/MDAxNTM2ODk4Nzg1ODc4.-vOeakgSKNo2LzDsLlwRGYgqubi3IghZ3sbWyLf4d0wg.5Kxlk8lco87vGzWP6PRDqMdjWm8J5WlhHbk8bOaDvhgg.GIF.djdjejh/search23.gif?type=w773)
 
 > 상세페이지 구현  
 * 패키지내에 해당하는 테마와 숙소정보등을 ajax를 통해 받아서 페이지내에 출력
