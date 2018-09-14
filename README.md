@@ -35,7 +35,7 @@
 * 사용자가 로그인시 여행에 대한 리뷰작성 및 결제가 가능 
 
 >![상세페이지](https://postfiles.pstatic.net/MjAxODA5MTRfMyAg/MDAxNTM2OTAxOTQ5Mzky.aSJpso6ra4HbvUPXgISFsybnZav61qaowy6i3rp6xUsg.sJBn653MBn1BhPP6koFlALbdxfsVkrUNj-BbwmsnTMQg.GIF.djdjejh/dets.gif?type=w773)
->![상세페이지](https://s3-eu-west-1.amazonaws.com/froala-eu/temp_files%2F1533878046114-%EC%9D%BC%EC%A0%95.png)
+
 ### 프로젝트 구조
 * #### controller / domain / mapper / xml <br>
 >![enter image description here](https://postfiles.pstatic.net/MjAxODA5MTRfNjEg/MDAxNTM2OTAwMTkwNzM4.kPlaJQi-W1KwxgjTPnJ2EodWMCBz-fy1o8zWFQt5eHcg.WccvXiNeiMGugyKVkZKLaDwSyGmSGhehgqy7S_yO2DQg.PNG.djdjejh/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%EA%B5%AC%EC%A1%B0.png?type=w773)
