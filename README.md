@@ -34,7 +34,7 @@
 * 패키지내에 해당하는 테마와 숙소정보등을 ajax를 통해 받아서 페이지내에 출력
 * 사용자가 로그인시 여행에 대한 리뷰작성 및 결제가 가능 
 
->![상세페이지](https://postfiles.pstatic.net/MjAxODA5MTRfMyAg/MDAxNTM2OTAxOTQ5Mzky.aSJpso6ra4HbvUPXgISFsybnZav61qaowy6i3rp6xUsg.sJBn653MBn1BhPP6koFlALbdxfsVkrUNj-BbwmsnTMQg.GIF.djdjejh/dets.gif?type=w773)
+>![상세페이지](https://postfiles.pstatic.net/MjAxODA5MjdfMjAx/MDAxNTM3OTc3NzkxMTYy.DWI3LTVobglSMry3FS4zm3uugpKSMNmmBHTu5gCuJT4g.9cjYg4esKADaKH-ohXti4k1bTPqcaRraEa1lEaZ4CIAg.GIF.djdjejh/dets.gif?type=w773)
 
 ### 프로젝트 구조
 * #### controller / domain / mapper / xml <br>
